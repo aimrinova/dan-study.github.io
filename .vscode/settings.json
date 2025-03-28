@@ -1,0 +1,46 @@
+{
+  "window.autoDetectColorScheme": true,
+  "workbench.colorTheme": "Shades of Purple",
+  "workbench.iconTheme": "vscode-icons",
+  "editor.fontFamily": "Operator Mono, Menlo, Monaco, 'Courier New', monospace",
+  "terminal.integrated.fontFamily": "'Operator Mono', 'Inconsolata for Powerline', monospace",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 20.0,
+  "editor.letterSpacing": 0.2,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 4,
+  "editor.cursorBlinking": "solid",
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.glyphMargin": true,
+  "workbench.editor.enablePreview": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "editor.formatOnSave": true,
+  "prettier.eslintIntegration": true,
+  "eslint.run": "onType",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.semanticHighlighting.enabled": false,
+  "highlight-matching-tag.styles": {
+    "opening": {
+      "full": {
+        "highlight": "rgba(165, 153, 233, 0.3)"
+      }
+    }
+  },
+  "importCost.largePackageColor": "#EC3A37F5",
+  "importCost.mediumPackageColor": "#B362FF",
+  "importCost.smallPackageColor": "#B362FF",
+  "debug.inlineValues": true,
+  "editor.minimap.enabled": false,
+  "workbench.editor.openPositioning": "first",
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "python.analysis.typeCheckingMode": "standard"
+}
