@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>dangrapefruit | Python & Git Notes</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <h1>🧠 dangrapefruit's Study Hub</h1>
+    <h1>🧠 step1 MasterPythonInternals</h1>
     <nav>
-      <a href="/">Home</a>
+      <a href="/index.html">Home</a>
       <a href="/python">Python Internals</a>
       <a href="/git">Git Cheat Sheets</a>
 
@@ -29,98 +29,104 @@
     </ul>
   </aside>
 
-  <p>back [[Step 0 Overview Master Python Internals]] next [[Step 2 Master
-    Python Internals]]</p>
-  <p>That’s an excellent goal! If you want to reach an advanced level
-    where you deeply understand Python internals, optimize libraries, or
-    even contribute to Python itself, here’s a structured approach:</p>
-  <hr />
-  <h3 id="step-1-master-python-internals"><strong>Step 1: Master Python
-      Internals</strong></h3>
-  <p>To write your own modules effectively or modify existing ones, you
-    should understand:</p>
-  <ul>
-    <li>
-      <p><strong>Memory management</strong> (reference counting, garbage
-        collection, pymalloc).</p>
-    </li>
-    <li>
-      <p><strong>CPython implementation</strong> (how Python’s interpreter
-        works).</p>
-    </li>
-    <li>
-      <p><strong>Bytecode &amp; disassembly</strong> (<code>dis</code>
-        module to inspect bytecode).</p>
-    </li>
-    <li>
-      <p><strong>GIL (Global Interpreter Lock)</strong> and how it affects
-        threading.</p>
-    </li>
-  </ul>
-  <p><strong>Resources</strong>:</p>
-  <ul>
-    <li>
-      <p>Read <strong>“Python 3 Source Code”</strong> (start with
-        <code>Objects</code>, <code>Include</code>, <code>Python</code>
-        directories in CPython’s repo).
-      </p>
-    </li>
-    <li>
-      <p>Book: <strong>“CPython Internals” by Anthony
-          Shaw</strong></p>
-    </li>
-    <li>
-      <p>Explore Python’s <code>dis</code> module for bytecode
-        inspection:</p>
-      <div class="sourceCode" id="cb1">
-        <pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> dis</span>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Markdown content will be injected here -->
+    <article class="md-content" id="content"></article>
+
+    <p>back [[Step 0 Overview Master Python Internals]] next [[Step 2 Master
+      Python Internals]]</p>
+    <p>That’s an excellent goal! If you want to reach an advanced level
+      where you deeply understand Python internals, optimize libraries, or
+      even contribute to Python itself, here’s a structured approach:</p>
+    <hr />
+    <h3 id="step-1-master-python-internals"><strong>Step 1: Master Python
+        Internals</strong></h3>
+    <p>To write your own modules effectively or modify existing ones, you
+      should understand:</p>
+    <ul>
+      <li>
+        <p><strong>Memory management</strong> (reference counting, garbage
+          collection, pymalloc).</p>
+      </li>
+      <li>
+        <p><strong>CPython implementation</strong> (how Python’s interpreter
+          works).</p>
+      </li>
+      <li>
+        <p><strong>Bytecode &amp; disassembly</strong> (<code>dis</code>
+          module to inspect bytecode).</p>
+      </li>
+      <li>
+        <p><strong>GIL (Global Interpreter Lock)</strong> and how it affects
+          threading.</p>
+      </li>
+    </ul>
+    <p><strong>Resources</strong>:</p>
+    <ul>
+      <li>
+        <p>Read <strong>“Python 3 Source Code”</strong> (start with
+          <code>Objects</code>, <code>Include</code>, <code>Python</code>
+          directories in CPython’s repo).
+        </p>
+      </li>
+      <li>
+        <p>Book: <strong>“CPython Internals” by Anthony
+            Shaw</strong></p>
+      </li>
+      <li>
+        <p>Explore Python’s <code>dis</code> module for bytecode
+          inspection:</p>
+        <div class="sourceCode" id="cb1">
+          <pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> dis</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> test(x): <span class="cf">return</span> x <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>dis.dis(test)</span></code></pre>
-      </div>
-    </li>
-  </ul>
-  <hr />
-  <h3 id="step-2-writing-custom-python-modules"><strong>Step 2: Writing
-      Custom Python Modules</strong></h3>
-  <ol type="1">
-    <li>
-      <p><strong>Pure Python Modules</strong></p>
-      <ul>
-        <li>
-          <p>Learn about <strong><code>sys.modules</code></strong>,
-            <code>importlib</code>, and <code>__init__.py</code>.
-          </p>
-        </li>
-        <li>
-          <p>Study how standard libraries are structured
-            (<code>collections</code>, <code>itertools</code>,
-            <code>functools</code>).
-          </p>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <p><strong>C Extensions (Python + C)</strong></p>
-      <ul>
-        <li>
-          <p>Learn <strong>Python/C API</strong> (writing extensions in
-            C).</p>
-        </li>
-        <li>
-          <p>Understand <strong><code>PyObject</code> structure</strong> and
-            <strong>reference counting</strong>.
-          </p>
-        </li>
-        <li>
-          <p>Modify standard modules (<code>math</code>, <code>time</code>) to
-            improve performance.</p>
-        </li>
-      </ul>
-    </li>
-  </ol>
-  <p><strong>Example</strong>: Writing a simple C extension for Python</p>
-  <div class="sourceCode" id="cb2">
-    <pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Python.h&gt;</span></span>
+        </div>
+      </li>
+    </ul>
+    <hr />
+    <h3 id="step-2-writing-custom-python-modules"><strong>Step 2: Writing
+        Custom Python Modules</strong></h3>
+    <ol type="1">
+      <li>
+        <p><strong>Pure Python Modules</strong></p>
+        <ul>
+          <li>
+            <p>Learn about <strong><code>sys.modules</code></strong>,
+              <code>importlib</code>, and <code>__init__.py</code>.
+            </p>
+          </li>
+          <li>
+            <p>Study how standard libraries are structured
+              (<code>collections</code>, <code>itertools</code>,
+              <code>functools</code>).
+            </p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p><strong>C Extensions (Python + C)</strong></p>
+        <ul>
+          <li>
+            <p>Learn <strong>Python/C API</strong> (writing extensions in
+              C).</p>
+          </li>
+          <li>
+            <p>Understand <strong><code>PyObject</code> structure</strong> and
+              <strong>reference counting</strong>.
+            </p>
+          </li>
+          <li>
+            <p>Modify standard modules (<code>math</code>, <code>time</code>) to
+              improve performance.</p>
+          </li>
+        </ul>
+      </li>
+    </ol>
+    <p><strong>Example</strong>: Writing a simple C extension for Python</p>
+    <div class="sourceCode" id="cb2">
+      <pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;Python.h&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> PyObject<span class="op">*</span> say_hello<span class="op">(</span>PyObject<span class="op">*</span> self<span class="op">,</span> PyObject<span class="op">*</span> args<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Py_BuildValue<span class="op">(</span><span class="st">&quot;s&quot;</span><span class="op">,</span> <span class="st">&quot;Hello from C!&quot;</span><span class="op">);</span></span>
@@ -138,42 +144,42 @@
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>PyMODINIT_FUNC PyInit_mymodule<span class="op">(</span><span class="dt">void</span><span class="op">)</span> <span class="op">{</span></span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> PyModule_Create<span class="op">(&amp;</span>mymodule<span class="op">);</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
-  </div>
-  <p>Compile it using:</p>
-  <div class="sourceCode" id="cb3">
-    <pre
-      class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-shared</span> <span class="at">-o</span> mymodule.so <span class="at">-fPIC</span> mymodule.c <span class="at">-I</span>/usr/include/python3.X</span></code></pre>
-  </div>
-  <p>Then use it in Python:</p>
-  <div class="sourceCode" id="cb4">
-    <pre
-      class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mymodule</span>
+    </div>
+    <p>Compile it using:</p>
+    <div class="sourceCode" id="cb3">
+      <pre
+        class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gcc</span> <span class="at">-shared</span> <span class="at">-o</span> mymodule.so <span class="at">-fPIC</span> mymodule.c <span class="at">-I</span>/usr/include/python3.X</span></code></pre>
+    </div>
+    <p>Then use it in Python:</p>
+    <div class="sourceCode" id="cb4">
+      <pre
+        class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> mymodule</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mymodule.say_hello())</span></code></pre>
-  </div>
-  <hr />
-  <h3 id="step-3-modify-and-optimize-python-standard-libraries"><strong>Step
-      3: Modify and Optimize Python Standard Libraries</strong></h3>
-  <ul>
-    <li>
-      <p>Clone <strong>CPython repo</strong> and modify
-        <code>ceval.c</code>, <code>listobject.c</code>,
-        <code>tupleobject.c</code>.
-      </p>
-    </li>
-    <li>
-      <p>Optimize <strong><code>str</code> and <code>list</code>
-          operations</strong> using better algorithms.</p>
-    </li>
-    <li>
-      <p>Experiment with <strong>JIT compilation techniques</strong>
-        (PyPy’s tracing JIT).</p>
-    </li>
-  </ul>
-  <p>Example: Modify <code>list.append()</code> behavior in
-    <code>listobject.c</code>:
-  </p>
-  <div class="sourceCode" id="cb5">
-    <pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> PyObject <span class="op">*</span></span>
+    </div>
+    <hr />
+    <h3 id="step-3-modify-and-optimize-python-standard-libraries"><strong>Step
+        3: Modify and Optimize Python Standard Libraries</strong></h3>
+    <ul>
+      <li>
+        <p>Clone <strong>CPython repo</strong> and modify
+          <code>ceval.c</code>, <code>listobject.c</code>,
+          <code>tupleobject.c</code>.
+        </p>
+      </li>
+      <li>
+        <p>Optimize <strong><code>str</code> and <code>list</code>
+            operations</strong> using better algorithms.</p>
+      </li>
+      <li>
+        <p>Experiment with <strong>JIT compilation techniques</strong>
+          (PyPy’s tracing JIT).</p>
+      </li>
+    </ul>
+    <p>Example: Modify <code>list.append()</code> behavior in
+      <code>listobject.c</code>:
+    </p>
+    <div class="sourceCode" id="cb5">
+      <pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dt">static</span> PyObject <span class="op">*</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>list_append<span class="op">(</span>PyListObject <span class="op">*</span>self<span class="op">,</span> PyObject <span class="op">*</span>object<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>Py_SIZE<span class="op">(</span>self<span class="op">)</span> <span class="op">&gt;=</span> PyList_GET_SIZE<span class="op">(</span>self<span class="op">))</span> <span class="op">{</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="co">// Increase allocation to prevent frequent reallocations</span></span>
@@ -182,76 +188,73 @@
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    self<span class="op">-&gt;</span>ob_item<span class="op">[</span>Py_SIZE<span class="op">(</span>self<span class="op">)++]</span> <span class="op">=</span> object<span class="op">;</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Py_None<span class="op">;</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre>
-  </div>
-  <p>Compile and test the new Python build!</p>
-  <hr />
-  <h3 id="step-4-study-and-modify-pythons-garbage-collector"><strong>Step
-      4: Study and Modify Python’s Garbage Collector</strong></h3>
-  <ul>
-    <li>
-      <p>Understand <code>gcmodule.c</code> (Python’s garbage
-        collection).</p>
-    </li>
-    <li>
-      <p>Modify Python’s memory allocator
-        (<code>obmalloc.c</code>).</p>
-    </li>
-    <li>
-      <p>Experiment with <strong>arena allocation</strong> for
-        performance.</p>
-    </li>
-  </ul>
-  <p><strong>Example</strong>: Modify <code>PyObject_GC_Alloc</code> to
-    change memory allocation strategy.</p>
-  <hr />
-  <h3 id="step-5-contribute-to-python-4-optimizations"><strong>Step 5:
-      Contribute to Python 4 Optimizations</strong></h3>
-  <ul>
-    <li>
-      <p>Monitor PEPs (Python Enhancement Proposals).</p>
-    </li>
-    <li>
-      <p>Study <strong>Efficient Python Code</strong> techniques
-        (vectorization, SIMD).</p>
-    </li>
-    <li>
-      <p>Work with <strong>Cython, Numba</strong> to optimize
-        modules.</p>
-    </li>
-    <li>
-      <p>Contribute to CPython discussions on GitHub.</p>
-    </li>
-  </ul>
-  <hr />
-  <h3 id="final-goals"><strong>Final Goals</strong></h3>
-  <ol type="1">
-    <li>
-      <p>Build a <strong>high-performance Python module in
-          C</strong>.</p>
-    </li>
-    <li>
-      <p>Improve <strong>CPython’s performance</strong> (modify
-        <code>ceval.c</code>).
-      </p>
-    </li>
-    <li>
-      <p>Contribute <strong>patches to CPython</strong> for Python
-        4.</p>
-    </li>
-    <li>
-      <p>Write a <strong>JIT compiler experiment</strong> for
-        Python.</p>
-    </li>
-  </ol>
-  <p>Would you like to start with modifying a Python standard library or
-    building a C extension first?</p>
+    </div>
+    <p>Compile and test the new Python build!</p>
+    <hr />
+    <h3 id="step-4-study-and-modify-pythons-garbage-collector"><strong>Step
+        4: Study and Modify Python’s Garbage Collector</strong></h3>
+    <ul>
+      <li>
+        <p>Understand <code>gcmodule.c</code> (Python’s garbage
+          collection).</p>
+      </li>
+      <li>
+        <p>Modify Python’s memory allocator
+          (<code>obmalloc.c</code>).</p>
+      </li>
+      <li>
+        <p>Experiment with <strong>arena allocation</strong> for
+          performance.</p>
+      </li>
+    </ul>
+    <p><strong>Example</strong>: Modify <code>PyObject_GC_Alloc</code> to
+      change memory allocation strategy.</p>
+    <hr />
+    <h3 id="step-5-contribute-to-python-4-optimizations"><strong>Step 5:
+        Contribute to Python 4 Optimizations</strong></h3>
+    <ul>
+      <li>
+        <p>Monitor PEPs (Python Enhancement Proposals).</p>
+      </li>
+      <li>
+        <p>Study <strong>Efficient Python Code</strong> techniques
+          (vectorization, SIMD).</p>
+      </li>
+      <li>
+        <p>Work with <strong>Cython, Numba</strong> to optimize
+          modules.</p>
+      </li>
+      <li>
+        <p>Contribute to CPython discussions on GitHub.</p>
+      </li>
+    </ul>
+    <hr />
+    <h3 id="final-goals"><strong>Final Goals</strong></h3>
+    <ol type="1">
+      <li>
+        <p>Build a <strong>high-performance Python module in
+            C</strong>.</p>
+      </li>
+      <li>
+        <p>Improve <strong>CPython’s performance</strong> (modify
+          <code>ceval.c</code>).
+        </p>
+      </li>
+      <li>
+        <p>Contribute <strong>patches to CPython</strong> for Python
+          4.</p>
+      </li>
+      <li>
+        <p>Write a <strong>JIT compiler experiment</strong> for
+          Python.</p>
+      </li>
+    </ol>
+    <p>Would you like to start with modifying a Python standard library or
+      building a C extension first?</p>
 
 
 
-  <!-- Main Content -->
-  <main>
-    <!-- Markdown content will be injected here -->
-    <article class="md-content" id="content"></article>
+
   </main>
 
   <!-- Footer -->
