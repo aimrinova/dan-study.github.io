@@ -1,0 +1,37 @@
+/* E-Reader Style */
+body {
+    font-family: Georgia, serif;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    background: #f9f9f9;
+  }
+  
+  /* Markdown Content Styling */
+  .md-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .md-content h1, .md-content h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .md-content code {
+    background: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Dark Mode Toggle (Optional) */
+  .dark-mode {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
