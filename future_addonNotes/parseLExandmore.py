@@ -67,7 +67,7 @@ if __name__ == "__main__":
 
 # # 5. input output
 # 1/(2/3) # idle output: 1.5
-# # explanation: The division operation in Python 3 uses true division, which means that the result is a float value even if both operands are integers. In this case, the expression 1/(2/3) evaluates to 1.5. The lexer and parser work together to evaluate the expression and determine its value. The lexer breaks the input into tokens, while the parser analyzes the structure of the code and evaluates the expression. This is a common example of how Python handles numeric operations and types.
+
 # # error handling to avoid division by zero errors in Python 3, you can use a try-except block to catch the ZeroDivisionError exception. For example:
 # try:
 #     result = 1/(2/0)

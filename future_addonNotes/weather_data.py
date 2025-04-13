@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 # Author:  Daniel Schubert using Visual Studio Code and .venv with Python 3.13.1
 # Created on: 2025-04-12
-# I looked up the source code of the library to understand how it works, and it works with nearest and last observation data
+# I looked up the source code of the library to understand how it works, and it works with nearest
+# and last observation data
 # It is not in realtime, but a good alternative to the OpenWeatherMap API
 
 import asyncio
