@@ -11,6 +11,10 @@ import python_weather
 from typing import Tuple
 from datetime import datetime
 
+
+# title: Functions and Arguments and future_addonNotes is just a testing ground for pythonic code.
+# description: This file contains functions and explanations for the arguments used in python scripts.
+
 async def get_temperature(location) -> Tuple[int, datetime]:
     """Fetch the current temperature for a given location.
     @class Client: creates a session with this @url='https://wttr.in/Berlin?format=j1'
