@@ -52,16 +52,10 @@ class Person:
 
 def main() -> None:
     """
-    Main function to execute all functions.
-    It calls the functions to display age, location, and examination schedule with default values.
-    Every function has parameters to accept user input, but they are not used in this example.
+    Main function instantiating the Person class and displaying the attributes.
     """
-    # age = int(input("Enter your age: "))
-    # multiply_age_by_two()
-    # display_my_location()
-    # display_examination_schedule()
     student_daniel = Person()
-    print(student_daniel.display_class)  # Display the class attributes
+    student_daniel.display_class  # Display the class attributes
 
 if __name__ == "__main__":
     main()
