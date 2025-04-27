@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# own files
+future_addonNotes/
+
+
 # C extensions
 *.so
 
