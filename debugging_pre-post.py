@@ -23,7 +23,7 @@ R = TypeVar('R')
 F = TypeVar('F', bound=Callable[..., Any])
 
 # Define a decorator for pre- and post-condition checks
-def pre_post_conditions(pre_condition: Optional[Callable[[Any], bool]] = None,
+def pre_post_conditions(pre_condition: Optional[Callable[..., bool]] = None,
                          post_condition: Optional[Callable[[Any], bool]] = None) -> Callable[[F], F]:
     """
     Decorator to check pre- and post-conditions for a function.
@@ -52,16 +52,15 @@ def pre_post_conditions(pre_condition: Optional[Callable[[Any], bool]] = None,
 
 
 # Example pre-condition: check if the denominator is non-zero
-def non_zero_denominator(args: Tuple[float, float]) -> bool:
-    a, b = args
+def non_zero_denominator(a: float, b: float) -> bool:
     return b != 0
+
+# Example post-condition: check if the result is a finite number
+def is_finite(result: float) -> bool:
+    return result != float('inf') and result != float('nan')
 
 
 if __name__ == "__main__":
-    # Example post-condition: check if the result is a finite number
-    def is_finite(result: float) -> bool:
-        return result != float('inf') and result != float('nan')
-
     #    @pre_post_conditions(pre_condition=lambda *args, **kwargs: non_zero_denominator(args), post_condition=is_finite)
     @pre_post_conditions(pre_condition=non_zero_denominator, post_condition=is_finite)
     def divide(a: float, b: float) -> float:
