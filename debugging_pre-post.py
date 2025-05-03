@@ -3,34 +3,44 @@
 # author: Daniel Schubert
 # date: 2025-05-03
 
-
 # This script demonstrates the use of pre- and post-conditions for debugging.
 # It adds pre- and post-condition checks, and function call checks to ensure that the function behaves as expected.
 # It also includes a decorator to check for pre- and post-conditions.
-from typing import Callable, Any, Optional, Tuple, TypeVar, cast
-from functools import wraps
+
 import inspect
 import logging
 import sys
 import traceback
 
+from typing import Any, Optional, TypeVar, cast, ParamSpec
+from collections.abc import Callable
+from functools import wraps
+
+
 # Set up logging configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-T = TypeVar('T')
-R = TypeVar('R')
+# Without ParamSpec, I would have to use a generic type for the function signature.
 F = TypeVar('F', bound=Callable[..., Any])
+# ParamSpec allows us to capture the parameter types of a callable.
+P = ParamSpec('P')
+R = TypeVar('R')
+
 
 # Define a decorator for pre- and post-condition checks
-def pre_post_conditions(pre_condition: Optional[Callable[..., bool]] = None,
-                         post_condition: Optional[Callable[[Any], bool]] = None) -> Callable[[F], F]:
+def pre_post_conditions(
+        pre_condition: Optional[Callable[P, bool]] = None,
+        post_condition: Optional[Callable[[R], bool]] = None
+        ) -> Callable[[Callable[P, R]], Callable[P, R]]:
     """
     Decorator to check pre- and post-conditions for a function.
     """
-    def decorator(func: F) -> F:
+    # The decorator takes a function (func) with parameters P and return type R, and returns a new function with the same signature.
+    def decorator(func: Callable[P, R]) -> Callable[P, R]:
         @wraps(func)
-        def wrapper(*args: Any, **kwargs: Any) -> Any:
+        # The wrapper accepts arguments matching the original function’s signature (via P.args and P.kwargs) and returns a value of type R.
+        def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
             # Check pre-condition
             if pre_condition and not pre_condition(*args, **kwargs):
                 logger.error(f"Pre-condition failed for {func.__name__} with args: {args}, kwargs: {kwargs}")
@@ -46,7 +56,7 @@ def pre_post_conditions(pre_condition: Optional[Callable[..., bool]] = None,
 
             return result
 
-        return cast(F, wrapper)
+        return cast(Callable[P, R], wrapper)
 
     return decorator
 
@@ -61,7 +71,7 @@ def is_finite(result: float) -> bool:
 
 
 if __name__ == "__main__":
-    #    @pre_post_conditions(pre_condition=lambda *args, **kwargs: non_zero_denominator(args), post_condition=is_finite)
+    #    @pre_post_conditions(pre_condition=lambda *args: non_zero_denominator(*args), post_condition=is_finite)
     @pre_post_conditions(pre_condition=non_zero_denominator, post_condition=is_finite)
     def divide(a: float, b: float) -> float:
         """
