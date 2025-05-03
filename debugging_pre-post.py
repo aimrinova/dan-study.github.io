@@ -7,15 +7,12 @@
 # This script demonstrates the use of pre- and post-conditions for debugging.
 # It adds pre- and post-condition checks, and function call checks to ensure that the function behaves as expected.
 # It also includes a decorator to check for pre- and post-conditions.
-
-
 from typing import Callable, Any, Optional, Tuple, TypeVar, cast
 from functools import wraps
 import inspect
 import logging
 import sys
 import traceback
-
 
 # Set up logging configuration
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -64,6 +61,8 @@ if __name__ == "__main__":
     # Example post-condition: check if the result is a finite number
     def is_finite(result: float) -> bool:
         return result != float('inf') and result != float('nan')
+
+    #    @pre_post_conditions(pre_condition=lambda *args, **kwargs: non_zero_denominator(args), post_condition=is_finite)
     @pre_post_conditions(pre_condition=non_zero_denominator, post_condition=is_finite)
     def divide(a: float, b: float) -> float:
         """
